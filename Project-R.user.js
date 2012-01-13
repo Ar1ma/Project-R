@@ -12,9 +12,9 @@
 // ==/UserScript==
 
 /******** switching to firebug log ********/
-if(unsafeWindow.console){
+/*if(unsafeWindow.console){
    var FireBug_log = unsafeWindow.console.log;
-}
+}*/
 
 
 /******** Globals ********/
@@ -24,6 +24,17 @@ var pr_content = document.getElementById("content");
 
 
 /******** Functions ********/
+
+function runCheck (){
+
+	if (pr_content.className==""){
+		pr_content.className="running";
+		return true;
+	} else {
+
+		return false;
+	}
+}
 
 function clearContent (){
 
@@ -35,12 +46,19 @@ function clearContent (){
 /****** Main Fuction *******/
 function initMain (){
 
-	clearContent();
+	var running = runCheck ();
+
+	if (running){
+
+	//clearContent();	
+
+	}
+
 
 }
 
-/*** Run main ***/
+/*** Run main when content is loaded ***/
 
-initMain ();
-
+document.addEventListener("DOMContentLoaded", initMain , false);
+//initMain();
 
