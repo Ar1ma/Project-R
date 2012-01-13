@@ -44,7 +44,7 @@ function clearContent (){
 }
 
 
-function createDesgin (){
+function createHolder (){
 	
 	var gaia_content = document.createElement('div');
 	gaia_content.id = "gaia_content";
@@ -74,7 +74,7 @@ function initMain (){
 
 		clearContent();
 		
-		createDesgin();
+		createHolder();
 	}
 
 
