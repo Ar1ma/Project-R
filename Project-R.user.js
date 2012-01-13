@@ -38,10 +38,32 @@ function runCheck (){
 
 function clearContent (){
 
-	var content_child = document.getElementById("content-padding");
-	pr_content.removeChild(content_child);
+	var content_padding = document.getElementById("content-padding");
+	pr_content.removeChild(content_padding);
 	
 }
+
+
+function createHolder (){
+	
+	var gaia_content = document.createElement('div');
+	gaia_content.id = "gaia_content";
+	gaia_content.className = "grid_billie_holiday";
+
+
+	var menu_shadow = document.createElement('div');
+	menu_shadow.id = "menu_shadow";
+
+	var bd = document.createElement('div');
+	bd.id = "bd";
+
+	gaia_content.appendChild (menu_shadow);
+	gaia_content.appendChild (bd);
+
+	pr_content.appendChild(gaia_content);
+
+}
+
 
 /****** Main Fuction *******/
 function initMain (){
@@ -50,8 +72,9 @@ function initMain (){
 
 	if (running){
 
-	//clearContent();	
-
+		clearContent();
+		
+		createHolder();
 	}
 
 
@@ -60,5 +83,5 @@ function initMain (){
 /*** Run main when content is loaded ***/
 
 document.addEventListener("DOMContentLoaded", initMain , false);
-//initMain();
+
 
