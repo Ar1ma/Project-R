@@ -19,9 +19,11 @@
 
 /******** Globals ********/
 
-var pr_content = document.getElementById("content");
+var pr_content = null;
 
-var pr_Data = null;
+var pr_page = null;
+
+var pr_data = null;
 
 
 
@@ -29,9 +31,13 @@ var pr_Data = null;
 
 function runCheck (){
 
+	pr_content = document.getElementById("content");
+
 	if (pr_content.className==""){
+		
 		pr_content.className="running";
 		return true;
+
 	} else {
 
 		return false;
@@ -41,7 +47,7 @@ function runCheck (){
 function getData (){
 
 	var content_padding = document.getElementById("content-padding");
-	pr_Data = content_padding.cloneNode(true);
+	pr_data = content_padding.cloneNode(true);
 
 }
 
@@ -111,7 +117,7 @@ function createHolder (){
 function placeData (){
 
 	var left_content_holder = document.getElementById("left_content_holder");
-	left_content_holder.appendChild(pr_Data);
+	left_content_holder.appendChild(pr_data);
 
 }
 /****** Main Fuction *******/
