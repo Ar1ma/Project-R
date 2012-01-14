@@ -80,10 +80,10 @@ function createHolder (){
 	var yui_g = document.createElement('div');
 	yui_g.className = "yui-g";
 	var yui_u_first = document.createElement('div');
-	yui_u_first.id = "left_content";
+	yui_u_first.id = "left_content_holder";
 	yui_u_first.className = "yui-u first";
 	var yui_u_last = document.createElement('div');
-	yui_u_last.id = "right_content";
+	yui_u_last.id = "right_content_holder";
 	yui_u_last.className = "yui-u last";
 
 	yui_g.appendChild(yui_u_first);
@@ -108,7 +108,12 @@ function createHolder (){
 
 }
 
+function placeData (){
 
+	var left_content_holder = document.getElementById("left_content_holde");
+	left_content_holder.appendChild(pr_Data);
+
+}
 /****** Main Fuction *******/
 function initMain (){
 
@@ -121,6 +126,8 @@ function initMain (){
 		clearContent();
 		
 		createHolder();
+
+		placeData();
 	}
 
 
