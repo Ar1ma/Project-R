@@ -154,7 +154,7 @@ function createMenu (){
 	var status_main_link = document.createElement('a');
 	status_main_link.className = "link ";
 	status_main_link.setAttribute('href', 'stats.php');
-	status_main_link.innerHTML = "Status Main";
+	status_main_link.innerHTML = "Overview";
 
 	status_main.appendChild(status_main_link);
 	fishing_menu.appendChild(status_main);
@@ -175,7 +175,7 @@ function createMenu (){
 	var all_status_link = document.createElement('a');
 	all_status_link.className = "link ";
 	all_status_link.setAttribute('href', 'stats.php?mode=all');
-	all_status_link.innerHTML = "All Status";
+	all_status_link.innerHTML = "More Rankings";
 
 	all_status.appendChild(all_status_link);
 	fishing_menu.appendChild(all_status);
