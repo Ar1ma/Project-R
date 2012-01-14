@@ -21,6 +21,8 @@
 
 var pr_content = document.getElementById("content");
 
+var pr_Data = null;
+
 
 
 /******** Functions ********/
@@ -34,6 +36,13 @@ function runCheck (){
 
 		return false;
 	}
+}
+
+function getData (){
+
+	var content_padding = document.getElementById("content-padding");
+	pr_Data = content_padding.cloneNode();
+
 }
 
 function clearContent (){
@@ -76,8 +85,6 @@ function createHolder (){
 	yui_u_last.className = "yui-u last";
 
 
-	yui_u_first.innerHTML = "<br/><br/><center><H1>Project R</H1></center><br/><br/>";
-
 	yui_g.appendChild(yui_u_first);
 	yui_g.appendChild(yui_u_last);
 	bd.appendChild (yui_g);
@@ -107,6 +114,8 @@ function initMain (){
 	var running = runCheck ();
 
 	if (running){
+
+		getData ();
 
 		clearContent();
 		
