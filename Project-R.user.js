@@ -41,7 +41,7 @@ function runCheck (){
 function getData (){
 
 	var content_padding = document.getElementById("content-padding");
-	pr_Data = content_padding.cloneNode();
+	pr_Data = content_padding.cloneNode(true);
 
 }
 
@@ -110,7 +110,7 @@ function createHolder (){
 
 function placeData (){
 
-	var left_content_holder = document.getElementById("left_content_holde");
+	var left_content_holder = document.getElementById("left_content_holder");
 	left_content_holder.appendChild(pr_Data);
 
 }
