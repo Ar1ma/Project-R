@@ -57,6 +57,42 @@ function createHolder (){
 	var bd = document.createElement('div');
 	bd.id = "bd";
 
+	var grid_rc_container_top = document.createElement('div');
+	grid_rc_container_top.className = "grid_rc_container_top";
+	var rc_top_left = document.createElement('div');
+	rc_top_left.className = "rc_top_left";
+	var rc_top_right = document.createElement('div');
+	rc_top_right.className = "rc_top_right";
+
+	grid_rc_container_top.appendChild(rc_top_left);
+	grid_rc_container_top.appendChild(rc_top_right);
+	bd.appendChild (grid_rc_container_top);
+
+	var yui_g = document.createElement('div');
+	yui_g.className = "yui-g";
+	var yui_u_first = document.createElement('div');
+	yui_u_first.className = "yui-u first";
+	var yui_u_last = document.createElement('div');
+	yui_u_last.className = "yui-u last";
+
+
+	yui_u_first.innerHTML = "<br/><br/><center><H1>Project R</H1></center><br/><br/>";
+
+	yui_g.appendChild(yui_u_first);
+	//yui_g.appendChild(yui_u_last);
+	bd.appendChild (yui_g);
+
+	var grid_rc_container_bottom = document.createElement('div');
+	grid_rc_container_bottom.className = "grid_rc_container_bottom";
+	var rc_bottom_left = document.createElement('div');
+	rc_bottom_left.className = "rc_bottom_left";
+	var rc_bottom_right = document.createElement('div');
+	rc_bottom_right.className = "rc_bottom_right";
+
+	grid_rc_container_bottom.appendChild(rc_bottom_left);
+	grid_rc_container_bottom.appendChild(rc_bottom_right);
+	bd.appendChild (grid_rc_container_bottom);
+
 	gaia_content.appendChild (menu_shadow);
 	gaia_content.appendChild (bd);
 

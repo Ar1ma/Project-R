@@ -75,8 +75,11 @@ function createHolder (){
 	var yui_u_last = document.createElement('div');
 	yui_u_last.className = "yui-u last";
 
+
+	yui_u_first.innerHTML = "<br/><br/><center><H1>Project R</H1></center><br/><br/>";
+
 	yui_g.appendChild(yui_u_first);
-	yui_g.appendChild(yui_u_last);
+	//yui_g.appendChild(yui_u_last);
 	bd.appendChild (yui_g);
 
 	var grid_rc_container_bottom = document.createElement('div');
