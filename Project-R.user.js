@@ -102,7 +102,7 @@ function createHolder (){
 
 	var yui_g = document.createElement('div');
 	yui_g.className = "yui-g";
-	var fishing_tabs = document.createElement('div');
+	var fishing_menu = document.createElement('div');
 	fishing_menu.id = "fishing_menu";
 	fishing_menu.className = "gaia_tab_menu_structure gaia_navigation_tabs current_tab_shops_landing_shops";
 	var yui_u_first = document.createElement('div');
@@ -135,6 +135,81 @@ function createHolder (){
 
 }
 
+function createMenu (){
+
+	var fishing_menu = document.getElementById("fishing_menu");
+
+	var status_main = document.createElement('div');
+
+	if (pr_page == "Main") {
+
+		status_main.className = "tab  current_tab";
+
+	} else {
+
+		status_main.className = "tab ";
+	
+	}
+
+	var status_main_link = document.createElement('a');
+	status_main_link.className = "link ";
+	status_main_link.setAttribute('href', 'stats.php');
+	status_main_link.innerHTML = "Status Main";
+
+	status_main.appendChild(status_main_link);
+	fishing_menu.appendChild(status_main);
+
+
+	var all_status = document.createElement('div');
+
+	if (pr_page == "All") {
+
+		all_status.className = "tab  current_tab";
+
+	} else {
+
+		all_status.className = "tab ";
+	
+	}
+
+	var all_status_link = document.createElement('a');
+	all_status_link.className = "link ";
+	all_status_link.setAttribute('href', 'stats.php?mode=all');
+	all_status_link.innerHTML = "All Status";
+
+	all_status.appendChild(all_status_link);
+	fishing_menu.appendChild(all_status);
+
+
+	var history = document.createElement('div');
+
+	if (pr_page == "History") {
+
+		history.className = "tab  last_tab current_tab";
+
+	} else {
+
+		history.className = "tab  last_tab";
+	
+	}
+
+	var history_link = document.createElement('a');
+	history_link.className = "link ";
+	history_link.setAttribute('href', 'stats.php?mode=myhistory');
+	history_link.innerHTML = "My History";
+
+	history.appendChild(history_link);
+	fishing_menu.appendChild(history);
+
+	var menu_end = document.createElement('div');
+	menu_end.className = "tab_end";
+	menu_end.innerHTML = "&nbsp;";
+
+	fishing_menu.appendChild(menu_end);
+
+
+}
+
 function placeData (){
 
 	var left_content_holder = document.getElementById("left_content_holder");
@@ -156,6 +231,8 @@ function initMain (){
 		clearContent();
 		
 		createHolder();
+
+		createMenu();
 
 		placeData();
 	}
