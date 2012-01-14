@@ -44,6 +44,23 @@ function runCheck (){
 	}
 }
 
+function detectPage (){
+
+	if ( document.URL.indexOf("?mode=all") > -1){
+
+		pr_page = "All";
+
+	} else if (document.URL.indexOf("?mode=myhistory") > -1) {
+
+		pr_page = "History";
+
+	} else {
+
+		pr_page = "Main";
+
+	}
+
+}
 function getData (){
 
 	var content_padding = document.getElementById("content-padding");
@@ -126,6 +143,8 @@ function initMain (){
 	var running = runCheck ();
 
 	if (running){
+
+		detectPage ();
 
 		getData ();
 
